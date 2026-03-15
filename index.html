@@ -160,7 +160,13 @@
 <div class="chat-button" onclick="toggleChat()">💬</div>
 
 <script>
+function openChat(){
+document.getElementById("chatbox").style.display="flex";
+}
 
+function closeChat(){
+document.getElementById("chatbox").style.display="none";
+}
 function toggleChat(){
   var chat = document.getElementById("chatbox");
   chat.style.display = chat.style.display === "flex" ? "none" : "flex";
@@ -195,7 +201,8 @@ step=3;
 }
 
 else if(step==3){
-reply="Our office is at lagos state, You can contact us on phone call/WhatsApp +2347084557250";
+reply=
+reply="Our office is at Zaramax Hotel And Suites, Nodu Road, Okpuno, Awka, Anambra Or Road 5 Ikota complex Lekki Ajah j90 shop You can contact us on phone call/WhatsApp +2347084557250 contact for more inquires";
 step=4;
 }
 
@@ -208,6 +215,7 @@ messages.innerHTML += "<p><b>Obi Perfect Group:</b> "+reply+"</p>";
 document.getElementById("userInput").value="";
 
 }
+
 
 </script>
 
@@ -271,6 +279,11 @@ Visit us today and experience the best in Nigeria! 🔌💡
   <div class="image-track">
     <img src="assets/images/pix3.jpg">
     <img src="assets/images/pix5.jpg">
+    <img src="assets/images/pix4.jpg">
+    <img src="assets/images/pix6.jpg">
+    <img src="assets/images/pix8.jpg">
+    <img src="assets/images/pix9.jpg">
+    <img src="assets/images/pix10.jpg">
     <img src="assets/images/pix29.jpg">
     <img src="assets/images/pix13.jpg">
     <img src="assets/images/pix21.jpg">

@@ -146,7 +146,13 @@
 <div class="chat-button" onclick="toggleChat()">💬</div>
 
 <script>
+function openChat(){
+document.getElementById("chatbox").style.display="flex";
+}
 
+function closeChat(){
+document.getElementById("chatbox").style.display="none";
+}
 function toggleChat(){
   var chat = document.getElementById("chatbox");
   chat.style.display = chat.style.display === "flex" ? "none" : "flex";
@@ -181,7 +187,8 @@ step=3;
 }
 
 else if(step==3){
-reply="Our office is at lagos state, You can contact us on phone call/WhatsApp +2347084557250";
+reply=
+reply="Our office is at Zaramax Hotel And Suites, Nodu Road, Okpuno, Awka, Anambra Or Road 5 Ikota complex Lekki Ajah j90 shop You can contact us on phone call/WhatsApp +2347084557250 contact for more inquires";
 step=4;
 }
 
@@ -194,6 +201,7 @@ messages.innerHTML += "<p><b>Obi Perfect Group:</b> "+reply+"</p>";
 document.getElementById("userInput").value="";
 
 }
+
 
 </script>
 <p class="text-center">Our team is on it! 😊 We'll deliver top-quality Products to meet your needs. Expect professionalism, expertise, and a smile. You'll love the Obi Perfect Group difference!  Our expert team is ensuring everything works perfectly. 😊🔥</p>
