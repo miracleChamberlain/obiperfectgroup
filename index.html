@@ -61,50 +61,227 @@
 </nav>
     <!-- .................... The navbar stops here -->
 
-    <section class=" home-animation ">
-  <video  height="100%" controls  width="100%" autoplay muted>
-  <source src="assets/images/video2.mp4" type="video/mp4">
-</video>
+       <section class="home-animation">
+<div data-ride="carousel">
+<div class="carousel-inner">
+<div class="carousel-item active">
+<img class="d-block w-100" src="assets/images/pix11.jpg" width="100%" height="100%">
+<div class="carousel-caption  d-md-block">
+</div>
+<div class="d-flex justify-content-center align-items-center">
+
+<div class="membershipBtn">
+          <a href="service.html" class="btn btn-outline-primary text-dark">Order A Product</a>
+        </div>
+</div>
+</div>
+</div>
 </section>
     
 
-   
+  
+<style>
+
+.chat-button{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:60px;
+  height:60px;
+  background:#0b2a5b;
+  color:white;
+  border-radius:50%;
+  text-align:center;
+  line-height:60px;
+  font-size:25px;
+  cursor:pointer;
+}
+
+.chatbox{
+  position:fixed;
+  bottom:90px;
+  right:20px;
+  width:300px;
+  height:400px;
+  background:white;
+  border-radius:12px;
+  box-shadow:0 0 10px rgba(0,0,0,0.3);
+  display:none;
+  flex-direction:column;
+  z-index: 9999;
+}
+
+.chat-header{
+  background:#0b2a5b;
+  color:white;
+  padding:10px;
+  border-radius:10px 10px 0 0;
+  font-weight:bold;
+}
+
+.chat-body{
+  flex:1;
+  padding:10px;
+  overflow-y:auto;
+}
+
+.chat-input{
+  display:flex;
+  border-top:1px solid #ccc;
+}
+
+.chat-input input{
+  flex:1;
+  border:none;
+  padding:10px;
+}
+
+.chat-input button{
+  background:#0b2a5b;
+  color:white;
+  border:none;
+  padding:10px 15px;
+}
+
+</style>
+
+<div class="chatbox" id="chatbox">
+  <div class="chat-header">Obi Perfect Group</div>
+
+  <div class="chat-body" id="messages">
+     </div>
+
+  <div class="chat-input">
+    <input type="text" id="userInput" placeholder="Message...">
+    <button onclick="sendMessage()">↑</button>
+  </div>
+</div>
+
+<div class="chat-button" onclick="toggleChat()">💬</div>
+
+<script>
+
+function toggleChat(){
+  var chat = document.getElementById("chatbox");
+  chat.style.display = chat.style.display === "flex" ? "none" : "flex";
+}
+
+
+
+let step = 0;
+
+function sendMessage(){
+
+let input = document.getElementById("userInput").value;
+let messages = document.getElementById("messages");
+
+messages.innerHTML += "<p><b>You:</b> "+input+"</p>";
+
+let reply="";
+
+if(step==0){
+reply="Hello, how are you doing today?";
+step=1;
+}
+
+else if(step==1){
+reply="Do you want to know more about Obi Perfect Group?";
+step=2;
+}
+
+else if(step==2){
+reply="At Obi Perfect Group, we've got the latest gadgets and essentials to power your world. From sleek home appliances to cutting-edge tech, we've got you covered. Visit us today and take the first step to a brighter, smarter, and more connected home! 🔥1. Electrical products to power your dreams 2. Stunning real estate to call home 3. Smart keys for effortless living 4. Interior design solutions to inspire you 5. CCTV installation for peace of mind 6. Auto mobile services to keep you moving 7. Expert cleaning & maintenance to sparkle. Visit us today and experience the best in Nigeria! 🔌💡";
+step=3;
+}
+
+else if(step==3){
+reply="Our office is at lagos state, You can contact us on phone call/WhatsApp +2347084557250";
+step=4;
+}
+
+else{
+reply="Thank you for chatting with us.";
+}
+
+messages.innerHTML += "<p><b>Bot:</b> "+reply+"</p>";
+
+document.getElementById("userInput").value="";
+
+}
+
+</script>
 
     <section class=" ml-2 about home-animation">
       <div class="about-header mb-2 mt-3">
         <h2 class="text-center">What You Need to Know About Obi Perfect Group</h2>
         <div id="line"></div>
       </div>
-
-      <section class=" d-flex home-animation">
-      <div class="container d-flex flex-column justify-content-center align-items-center">
-        <div class="d-flex justify-content-center align-items-center">
-         
-            </div>
-        <div class="my-3">
-          <h6 class="text-dark text-center" style="font-weight: bold;"> <b> Real Estate.&nbsp;Smart Keys .&nbsp;Interior Design .&nbsp;CCTV Installation.&nbsp;Auto Mobile Services .&nbsp; Cleaning And Maintenance.&nbsp;Power Supply. &nbsp;</b> </h6>
-        </div>
-        <div>
-          <p class="text-dark text-center text-justify" style="font-size: 18px;">
-            Transform your life with Obi Perfect Group 🌟! Explore our wide range of top-quality products and services, tailored to make your world smarter, safer, and more beautiful.Transform your space, transform your life! 🔌💡 At Obi Perfect Group, we've got the latest gadgets and essentials to power your world. From sleek home appliances to cutting-edge tech, we've got you covered. Visit us today and take the first step to a brighter, smarter, and more connected home! 🔥 <br>
-
-1. Electrical products to power your dreams <br>
-2. Stunning real estate to call home <br>
-3. Smart keys for effortless living <br>
-4. Interior design solutions to inspire you<br>
-5. CCTV installation for peace of mind <br>
-6. Auto mobile services to keep you moving <br>
-7. Expert cleaning & maintenance to sparkle <br>
-
+<section class="home-animation"> 
+          <p class=" text-center">
+            Transform your life with Obi Perfect Group 🌟! Explore our wide range of top-quality products and services, tailored to make your world smarter, safer, and more beautiful.Transform your space, transform your life! 🔌💡 At Obi Perfect Group, we've got the latest gadgets and essentials to power your world. From sleek home appliances to cutting-edge tech, we've got you covered. Visit us today and take the first step to a brighter, smarter, and more connected home! 🔥
 Visit us today and experience the best in Nigeria! 🔌💡
           </p>
-        </div>
-        <div class="membershipBtn mt-3">
+    </section>
+    </section>
+
+    <section class=" home-animation ">
+  <video  height="100%" controls  width="100%" autoplay muted>
+  <source src="assets/images/video2.mp4" type="video/mp4">
+</video>
+<div class="membershipBtn">
           <a href="service.html" class="btn btn-outline-primary text-dark">Order A Product</a>
         </div>
+</section>
+
+   
+<style>
+
+.image-scroll {
+  width: 100%;
+  overflow: hidden;
+}
+
+.image-track {
+  display: flex;
+  animation: scrollImages 20s linear infinite;
+}
+
+.image-track img {
+  width: 200px;
+  height: 150px;
+  margin-left: 10px;
+}
+
+@keyframes scrollImages {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+</style>
+
+<section class=" ml-2 about home-animation">
+      <div class="about-header mb-2 mt-3">
+        <h2 class="text-center">Obi Perfect Group Product</h2>
+        <div id="line"></div>
       </div>
-    </section>
-    </section>
+<div class="image-scroll">
+  <div class="image-track">
+    <img src="assets/images/pix3.jpg">
+    <img src="assets/images/pix5.jpg">
+    <img src="assets/images/pix29.jpg">
+    <img src="assets/images/pix13.jpg">
+    <img src="assets/images/pix21.jpg">
+    <img src="assets/images/pix16.jpg">
+    <img src="assets/images/pix22.jpg">
+    <img src="assets/images/pix20.jpg">
+    <img src="assets/images/pix19.jpg">
+  </div>
+</div>
+</section>
+
 
     <section class="ml-2 whyJoinhealth container home-animation">
       <div class=" ml-2 whyJoinhealth-header mb-3 mt-3">
@@ -148,12 +325,14 @@ Visit us today and experience the best in Nigeria! 🔌💡
           </div>
           <div class="col-md-4 d-flex align-items-center mt-2">
             <h4 class="mr-4">STAY IN TOUCH:</h4>
-            <a href=""><i class="fa fa-facebook"></i></a>
-              <a href=""><i class="fa fa-instagram"></i></a>
-              
-<a href=" https://wa.me/+2?text=urlencodedtext">
+            <a href="https://web.facebook.com/profile.php?id=61578241253825"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.instagram.com/obiperfectgroup/"><i class="fa fa-instagram"></i></a>
+              <a href="https://www.tiktok.com/@obiperfect_group ">
+              <img src="assets/images/titok.jpg" class="rounded-circle ml-3" width="40" height="40"  alt=""></a>
+             
+<a href=" https://wa.me/+2347084557250?I Want To Know More About Obi Perfect Group">
 <img src="assets/images/pix32.jpg" class="rounded-circle ml-3" width="40" height="40"  alt=""></a>
-  					 </div>
+             </div>
         </div>
       </div>
     </footer>

@@ -60,6 +60,135 @@
   </div>
 </nav>
     <!-- .................... The navbar stops here -->
+    <style>
+.chat-button{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:60px;
+  height:60px;
+  background:#0b2a5b;
+  color:white;
+  border-radius:50%;
+  text-align:center;
+  line-height:60px;
+  font-size:25px;
+  cursor:pointer;
+}
+
+.chatbox{
+  position:fixed;
+  bottom:90px;
+  right:20px;
+  width:300px;
+  height:400px;
+  background:white;
+  border-radius:12px;
+  box-shadow:0 0 10px rgba(0,0,0,0.3);
+  display:none;
+  flex-direction:column;
+  z-index: 9999;
+}
+
+.chat-header{
+  background:#0b2a5b;
+  color:white;
+  padding:10px;
+  border-radius:10px 10px 0 0;
+  font-weight:bold;
+}
+
+.chat-body{
+  flex:1;
+  padding:10px;
+  overflow-y:auto;
+}
+
+.chat-input{
+  display:flex;
+  border-top:1px solid #ccc;
+}
+
+.chat-input input{
+  flex:1;
+  border:none;
+  padding:10px;
+}
+
+.chat-input button{
+  background:#0b2a5b;
+  color:white;
+  border:none;
+  padding:10px 15px;
+}
+
+</style>
+
+<div class="chatbox" id="chatbox">
+  <div class="chat-header">Obi Perfect Group</div>
+
+  <div class="chat-body" id="messages">
+     </div>
+
+  <div class="chat-input">
+    <input type="text" id="userInput" placeholder="Message...">
+    <button onclick="sendMessage()">↑</button>
+  </div>
+</div>
+
+<div class="chat-button" onclick="toggleChat()">💬</div>
+
+<script>
+
+function toggleChat(){
+  var chat = document.getElementById("chatbox");
+  chat.style.display = chat.style.display === "flex" ? "none" : "flex";
+}
+
+
+
+let step = 0;
+
+function sendMessage(){
+
+let input = document.getElementById("userInput").value;
+let messages = document.getElementById("messages");
+
+messages.innerHTML += "<p><b>You:</b> "+input+"</p>";
+
+let reply="";
+
+if(step==0){
+reply="Hello, how are you doing today?";
+step=1;
+}
+
+else if(step==1){
+reply="Do you want to know more about Obi Perfect Group?";
+step=2;
+}
+
+else if(step==2){
+reply="At Obi Perfect Group, we've got the latest gadgets and essentials to power your world. From sleek home appliances to cutting-edge tech, we've got you covered. Visit us today and take the first step to a brighter, smarter, and more connected home! 🔥1. Electrical products to power your dreams 2. Stunning real estate to call home 3. Smart keys for effortless living 4. Interior design solutions to inspire you 5. CCTV installation for peace of mind 6. Auto mobile services to keep you moving 7. Expert cleaning & maintenance to sparkle. Visit us today and experience the best in Nigeria! 🔌💡";
+step=3;
+}
+
+else if(step==3){
+reply="Our office is at lagos state, You can contact us on phone call/WhatsApp +2347084557250";
+step=4;
+}
+
+else{
+reply="Thank you for chatting with us.";
+}
+
+messages.innerHTML += "<p><b>Bot:</b> "+reply+"</p>";
+
+document.getElementById("userInput").value="";
+
+}
+
+</script>
 
     <section class="mb-0">
         <img src="assets/images/pix18.jpg" class="img-fluid" width="100%" height="100%" alt="Responsive image">
@@ -80,17 +209,19 @@
       <div class="row contact-page">
         <div class=" col-md-5">
 					<div class="d-flex align-items-center mt-3">
-					 <a href="" class="text-dark"><i class="fa fa-facebook mr-1"></i class="mr-4">Facebook</a>
-						<a href="" class="text-dark"><i class="fa fa-twitter ml-1 mr-1"></i>Twitter</a>
-						<a href="" class="text-dark"><i class="fa fa-instagram ml-3 mr-1"></i>Instagram</a>
-						<a href="" class="text-dark"><i class="ml-2 mr-1 fa fa-youtube"></i>Youtube</a>
-						</div>
+					 <a href="https://web.facebook.com/profile.php?id=61578241253825"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.instagram.com/obiperfectgroup/"><i class="fa fa-instagram"></i></a>
+              <a href="https://www.tiktok.com/@obiperfect_group ">
+              <img src="assets/images/titok.jpg" class="rounded-circle ml-3" width="40" height="40"  alt=""></a>
+             
+<a href=" https://wa.me/+2347084557250?I Want To Know More About Obi Perfect Group">
+<img src="assets/images/pix32.jpg" class="rounded-circle ml-3" width="40" height="40"  alt=""></a>	</div>
 						<div class="d-flex align-items-center mt-1">
-							<img src="assets/images/call.jpg" width="40px" height="40px" class="rounded-circle" alt=""><span>+234566788888, 866555445566778</span>
+							<img src="assets/images/call.jpg" width="40px" height="40px" class="rounded-circle" alt=""><span>+2347084557250</span>
 						</div>
 
 							<div class="d-flex align-items-center mt-1">
-								<img src="assets/images/email.jpg" width="40px" height="40px" class="rounded-circle" alt=""><span >Obi Perfect Group@gmail.com</span>
+								<img src="assets/images/email.jpg" width="40px" height="40px" class="rounded-circle" alt=""><span >ObiPerfectGroup@gmail.com</span>
 							</div>
 							<div class="d-flex align-items-center mt-1">
 								<img src="assets/images/address.jpg" width="40px" height="40px" class="rounded-circle" alt="">
@@ -104,7 +235,7 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleFormControlInput1">Name</label>
-                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name">
+                  <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="name">
                 </div>
 
                 <div class="form-group">
@@ -120,8 +251,8 @@
 
 			 <div>
 					 <!-- Google Map Copied Code -->
-					 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d919.2754457722651!2d6.995198622472744!3d6.179517214478716!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1043834802e1356b%3A0x7ed90cdacc384b13!2sOGENE%2098.3FM!5e1!3m2!1sen!2sng!4v1709286972347!5m2!1sen!2sng">
-									 width="400"
+					 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.25471408987!2d7.066528074990475!3d6.230112993758069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104383ea9b1f1435%3A0xbf601a71bbae1e63!2sZaraMax%20Hotels%20%26%20Suites!5e0!3m2!1sen!2sng!4v1772951668998!5m2!1sen!2sng" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy=no-referrer-when-downgrade">
+        				 width="400"
 									 height="300"
 									 frameborder="0"
 									 style="border:0;"
@@ -142,10 +273,12 @@
           </div>
           <div class="col-md-4 d-flex align-items-center mt-2">
             <h4 class="mr-4">STAY IN TOUCH:</h4>
-            <a href=""><i class="fa fa-facebook"></i></a>
-              <a href=""><i class="fa fa-instagram"></i></a>
-              
-<a href=" https://wa.me/+2?text=urlencodedtext">
+            <a href="https://web.facebook.com/profile.php?id=61578241253825"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.instagram.com/obiperfectgroup/"><i class="fa fa-instagram"></i></a>
+              <a href="https://www.tiktok.com/@obiperfect_group ">
+              <img src="assets/images/titok.jpg" class="rounded-circle ml-3" width="40" height="40"  alt=""></a>
+             
+<a href=" https://wa.me/+2347084557250?I Want To Know More About Obi Perfect Group">
 <img src="assets/images/pix32.jpg" class="rounded-circle ml-3" width="40" height="40"  alt=""></a>
              </div>
         </div>
